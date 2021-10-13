@@ -1,7 +1,7 @@
-install.packages("magick")
 library(magick)
 library(foreach)
 library(data.table)
+library(raster)
 
 #use magick to quickly extra file attributes
 path<-"~/Downloads/petfinder-pawpularity-score/train/"
@@ -30,8 +30,6 @@ summary(m2)
 
 
 #convert image into raster - only tested on 1 image so far
-install.packages("imager")
-library(imager)
 test<-as.raster(x[[1]])
 dim(test)
 rgb.array<-apply(test,1:2,col2rgb)
